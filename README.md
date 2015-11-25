@@ -1,10 +1,10 @@
 #wildcard
-[![PypiDownloads](https://img.shields.io/pypi/dm/wd.svg)](https://pypi.python.org/pypi/wd)
+[![PypiDownloads](https://img.shields.io/pypi/dm/pywildcard.svg)](https://pypi.python.org/pypi/pywildcard)
 
 ## Install
 
 ```bash
-pip install wd
+pip install pywildcard
 ```
 
-Link pypi: https://pypi.python.org/pypi/wd
+Link pypi: https://pypi.python.org/pypi/pywildcard

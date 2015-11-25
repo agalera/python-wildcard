@@ -21,20 +21,20 @@ changelog = read_md('CHANGELOG.md')
 
 
 setup(
-    name='wd',
-    version='1.0.0',
+    name='pywildcard',
+    version='1.0.5',
     description='wildcard',
     long_description=readme+'\n\n'+changelog,
     author='Firecarrot',
     author_email='support@firecarrot.com',
     url='https://github.com/fire-carrot/wildcard',
-    py_modules=['wildcard'],
+    py_modules=['pywildcard'],
     include_package_data=True,
     install_requires=[
     ],
     license="GPL",
     zip_safe=False,
-    keywords='wildcard, wd',
+    keywords='wildcard, pywildcard',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Topic :: Software Development :: Libraries :: Python Modules',
