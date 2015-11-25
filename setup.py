@@ -22,7 +22,7 @@ changelog = read_md('CHANGELOG.md')
 
 setup(
     name='pywildcard',
-    version='1.0.5',
+    version='1.0.6',
     description='wildcard',
     long_description=readme+'\n\n'+changelog,
     author='Firecarrot',
