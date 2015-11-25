@@ -9,10 +9,7 @@ except ImportError:
     read_md = lambda f: open(f, 'r').read()
 
 
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup
 
 
 if sys.argv[-1] == 'publish':
@@ -24,7 +21,7 @@ changelog = read_md('CHANGELOG.md')
 
 
 setup(
-    name='wildcard',
+    name='wd',
     version='1.0.0',
     description='wildcard',
     long_description=readme+'\n\n'+changelog,
@@ -37,7 +34,7 @@ setup(
     ],
     license="GPL",
     zip_safe=False,
-    keywords='wildcard',
+    keywords='wildcard, wd',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Topic :: Software Development :: Libraries :: Python Modules',
