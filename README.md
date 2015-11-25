@@ -4,7 +4,7 @@ This library is a fork of fnmatch (https://docs.python.org/2/library/fnmatch.htm
 
 [![PypiDownloads](https://img.shields.io/pypi/dm/pywildcard.svg)](https://pypi.python.org/pypi/pywildcard)
 
-All documentation is identical to fnmatch except * and **, ** and now * is * only affects the particular directory
+All documentation is identical to fnmatch except "*" and "**", "**" and now "*" is "*" only affects the particular directory
 
 https://docs.python.org/2/library/fnmatch.html
 
