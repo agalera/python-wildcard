@@ -19,9 +19,6 @@ Link pypi: https://pypi.python.org/pypi/pywildcard
 ## Example
 
 ```python
-# recommeded check all examples
-from basicevents import (subscribe, send_thread, send_queue,
-                         send_blocking, add_subscribe, send)
 import pywildcard
 dirs = ['hello/world.py', 'hello/world.pyc', 'hello/world/other/folder/example.py']
 pywildcard.filter(dirs, 'hello/*')
