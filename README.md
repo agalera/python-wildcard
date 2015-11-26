@@ -64,7 +64,7 @@ urls = ['example/l1/l2/test3-1.py',
         'example/l1/test2-2.py',
         'example/l1/l2/l3/test4-1.py']
 
-regex = pywildcard.translate('example/*')
+regex = pywildcard.translate('example/**')
 # ''example\\/.*?$(?ms)
 re.findall(regex, "\n".join(urls))
 # return ['example/l1/l2/test3-1.py',
