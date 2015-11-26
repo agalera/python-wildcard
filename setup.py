@@ -27,7 +27,7 @@ setup(
     long_description=readme+'\n\n'+changelog,
     author='Firecarrot',
     author_email='support@firecarrot.com',
-    url='https://github.com/fire-carrot/wildcard',
+    url='https://github.com/fire-carrot/python-wildcard',
     py_modules=['pywildcard'],
     include_package_data=True,
     install_requires=[
