@@ -4,8 +4,11 @@ import fnmatch as old
 from pywildcard import fnmatch, filter, translate
 
 
-TEST_PATHS2 = ['example/l1/l2/test3-1.py', 'example/l1/test2-1.py',
-               'example/l1/test2-2.py', 'example/l1/l2/l3/test4-1.py']
+PATHS1 = ['hello/world.py', 'hello/world.pyc',
+          'hello/world/other/folder/example.py']
+
+PATHS2 = ['example/l1/l2/test3-1.py', 'example/l1/test2-1.py',
+          'example/l1/test2-2.py', 'example/l1/l2/l3/test4-1.py']
 
 
 def test_fnmatch():
@@ -24,25 +27,24 @@ def test_fnmatch():
 
 
 def test_filter():
-    dirs = ['hello/world.py', 'hello/world.pyc',
-            'hello/world/other/folder/example.py']
-    assert filter(dirs, 'hello/*') == ['hello/world.py', 'hello/world.pyc']
-    assert filter(dirs, 'hello/*.py') == ['hello/world.py']
-    assert filter(dirs, 'hello/**') == dirs
-    assert filter(dirs, 'hello/**.py') == [
+    assert filter(PATHS1, 'hello/*') == ['hello/world.py', 'hello/world.pyc']
+    assert filter(PATHS1, 'hello/*.py') == ['hello/world.py']
+    assert filter(PATHS1, 'hello/**') == PATHS1
+    assert filter(PATHS1, 'hello/**.py') == [
         'hello/world.py', 'hello/world/other/folder/example.py']
 
 
 def test_translate():
     regex = translate('example/**')
-    assert regex == 'example/.*?$(?ms)'
-    assert re.findall(regex, '\n'.join(TEST_PATHS2)) == TEST_PATHS2
+    assert regex == '(?ms)example/.*?$'
+    assert re.findall(regex, '\n'.join(PATHS2)) == PATHS2
     regex = translate('example/*/*.py')
-    assert regex == 'example/[^\/]+/[^\/]+\.py$(?ms)'
-    assert re.findall(regex, '\n'.join(TEST_PATHS2)) == TEST_PATHS2[1:3]
+    assert regex == '(?ms)example/[^\\/]+/[^\\/]+\\.py$'
+    assert re.findall(regex, '\n'.join(PATHS2)) == PATHS2[1:3]
+
 
 def test_old_translate():
     regex = old.translate('example/*')
     # Python 2.7
     assert regex == '(?s:example/.*)\\Z'
-    assert re.findall(regex, '\n'.join(TEST_PATHS2)) == ['\n'.join(TEST_PATHS2)]
+    assert re.findall(regex, '\n'.join(PATHS2)) == ['\n'.join(PATHS2)]
