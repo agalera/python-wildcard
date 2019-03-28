@@ -1,4 +1,4 @@
-#wildcard
+# wildcard
 
 This library is a fork of fnmatch (https://docs.python.org/2/library/fnmatch.html) to implement **
 
@@ -22,7 +22,7 @@ Link pypi: https://pypi.python.org/pypi/pywildcard
 import pywildcard
 dirs = ['hello/world.py', 'hello/world.pyc', 'hello/world/other/folder/example.py']
 pywildcard.filter(dirs, 'hello/*')
-#  ['hello/world.py', 'hello/world.pyc']
+# ['hello/world.py', 'hello/world.pyc']
 
 pywildcard.filter(dirs, 'hello/*.py')
 # ['hello/world.py']
