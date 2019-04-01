@@ -22,7 +22,7 @@ changelog = read_md('CHANGELOG.md')
 
 setup(
     name='pywildcard',
-    version='1.0.9',
+    version='1.0.10',
     description='A fork of fnmatch to implement **',
     long_description=readme+'\n\n'+changelog,
     author='Firecarrot',
