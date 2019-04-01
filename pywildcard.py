@@ -19,7 +19,7 @@ _MAXCACHE = 100
 
 
 def _purge():
-    """Clear the pattern cache"""
+    """Clear the pattern cache."""
     _cache.clear()
 
 
@@ -39,7 +39,6 @@ def fnmatch(name, pat):
     if the operating system requires it.
     If you don't want this, use fnmatchcase(FILENAME, PATTERN).
     """
-
     import os
     name = os.path.normcase(name)
     pat = os.path.normcase(pat)
@@ -47,7 +46,7 @@ def fnmatch(name, pat):
 
 
 def filter(names, pat):
-    """Return the subset of the list NAMES that match PAT"""
+    """Return the subset of the list NAMES that match PAT."""
     import os
     import posixpath
     result = []
@@ -78,7 +77,6 @@ def fnmatchcase(name, pat):
     This is a version of fnmatch() which doesn't case-normalize
     its arguments.
     """
-
     try:
         re_pat = _cache[pat]
     except KeyError:
@@ -94,7 +92,6 @@ def translate(pat):
 
     There is no way to quote meta-characters.
     """
-
     i, n = 0, len(pat)
     res = ''
     while i < n:
@@ -105,7 +102,7 @@ def translate(pat):
                 res = res + '.*?'
                 i = i + 1
             else:
-                res = res + '[^\/]+'
+                res = res + r'[^\/]+'
         elif c == '?':
             res = res + '.'
         elif c == '[':
@@ -128,5 +125,4 @@ def translate(pat):
                 res = '%s[%s]' % (res, stuff)
         else:
             res = res + re.escape(c)
-    return res + '$(?ms)'
-
+    return '(?ms)' + res + '$'
